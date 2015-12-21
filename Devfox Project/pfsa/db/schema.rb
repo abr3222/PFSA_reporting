@@ -105,9 +105,9 @@ ActiveRecord::Schema.define(version: 20151220113143) do
   end
 
   create_table "providers", force: :cascade do |t|
-    t.string   "provider_cnic",    limit: 50
-    t.string   "provider_name",    limit: 50
-    t.string   "provider_address", limit: 50, null: false
+    t.string   "provider_cnic",    limit: 50, null: false
+    t.string   "provider_name",    limit: 50, null: false
+    t.string   "provider_address", limit: 50
     t.string   "provider_contact", limit: 50
     t.string   "provider_beltno",  limit: 50
     t.datetime "created_at",                  null: false
