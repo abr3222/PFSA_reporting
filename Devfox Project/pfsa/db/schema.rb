@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151220113143) do
+ActiveRecord::Schema.define(version: 20151222170707) do
 
   create_table "all_evidence_details", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -210,6 +210,16 @@ ActiveRecord::Schema.define(version: 20151220113143) do
     t.datetime "updated_at",            null: false
   end
 
+  create_table "token_process_departments", force: :cascade do |t|
+    t.integer  "token_id",      limit: 4
+    t.integer  "department_id", limit: 4
+    t.string   "status",        limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "token_process_departments", ["token_id", "department_id"], name: "index_token_process_departments_on_token_id_and_department_id", using: :btree
+
   create_table "tokens", force: :cascade do |t|
     t.string   "serial_key",   limit: 255, null: false
     t.text     "token_detail", limit: 255
@@ -230,6 +240,19 @@ ActiveRecord::Schema.define(version: 20151220113143) do
   end
 
   add_index "users", ["user_pfsa_id"], name: "index_users_on_user_pfsa_id", unique: true, using: :btree
+
+  create_table "vault_logs", force: :cascade do |t|
+    t.integer  "user_id",            limit: 4
+    t.integer  "evidence_id",        limit: 4
+    t.string   "user_id_taken",      limit: 255, null: false
+    t.string   "user_id_place_back", limit: 255
+    t.string   "time_taken",         limit: 255, null: false
+    t.string   "time_place_back",    limit: 255
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  add_index "vault_logs", ["user_id", "evidence_id"], name: "index_vault_logs_on_user_id_and_evidence_id", using: :btree
 
   create_table "victims", force: :cascade do |t|
     t.string   "victim_cnic",      limit: 50,  null: false
