@@ -10,7 +10,6 @@ class CreateSuspects < ActiveRecord::Migration
       t.text "suspect_charges_detail", :limit => 200
       t.string "suspect_province"
       t.timestamps null: false
-      t.string"remove krna hai"
     end
     add_index(:suspects,:suspect_cnic, :unique => true)
   end
