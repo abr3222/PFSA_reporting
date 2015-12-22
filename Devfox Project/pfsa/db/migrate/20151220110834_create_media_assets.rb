@@ -5,7 +5,7 @@ class CreateMediaAssets < ActiveRecord::Migration
       t.string"asset_image"
       t.string"asset_video"
       t.string"asset_audio"
-      t.string"asset"
+      t.string"asset_others"
       t.timestamps null: false
     end
   end

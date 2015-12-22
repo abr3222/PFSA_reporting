@@ -5,10 +5,13 @@ class CreateSuspects < ActiveRecord::Migration
       t.string "suspect_name", :limit => 50 , :null=> false
       t.string "suspect_address", :limit => 50
       t.string "suspect_contact", :limit => 50
-      t.string "suspect_beltno", :limit => 50
-
+      t.string "suspect_district"
+      t.string "suspect_charges"
+      t.text "suspect_charges_detail", :limit => 200
+      t.string "suspect_province"
       t.timestamps null: false
     end
+    add_index(:suspects,:suspect_cnic, :unique => true)
   end
 
   def down
