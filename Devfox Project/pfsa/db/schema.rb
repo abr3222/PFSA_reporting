@@ -11,14 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151220113143) do
+ActiveRecord::Schema.define(version: 20151223063113) do
 
   create_table "all_evidence_details", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "all_evidence_type_possible_details", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -29,7 +24,12 @@ ActiveRecord::Schema.define(version: 20151220113143) do
     t.datetime "updated_at",               null: false
   end
 
-  create_table "case_departments", force: :cascade do |t|
+  create_table "all_evidencetypes_possibledetails_joins", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cases_departments_joins", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,54 +42,38 @@ ActiveRecord::Schema.define(version: 20151220113143) do
     t.datetime "updated_at",                  null: false
   end
 
-  create_table "department_users", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "departments", force: :cascade do |t|
     t.string   "department_name", limit: 60, null: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
 
-  create_table "detail_evidences", force: :cascade do |t|
+  create_table "departments_users_joins", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "evidence_suspects", force: :cascade do |t|
+  create_table "details_evidences_joins", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "evidence_users", force: :cascade do |t|
+  create_table "evidences_requireds_tests_joins", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "evidence_victims", force: :cascade do |t|
+  create_table "evidences_suspects_joins", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "evidences", force: :cascade do |t|
-    t.string   "evidence_id",        limit: 255, null: false
-    t.string   "assignment_status",  limit: 255
-    t.string   "evidence_name",      limit: 255
-    t.string   "evidence_type",      limit: 255
-    t.integer  "evidence_quantitiy", limit: 4
-    t.string   "evidence_condition", limit: 255
-    t.string   "evidence_details",   limit: 255
-    t.string   "road_letter",        limit: 255
-    t.datetime "leaving_at"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+  create_table "evidences_users_joins", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "evidences", ["evidence_id"], name: "index_evidences_on_evidence_id", unique: true, using: :btree
-
-  create_table "list_required_tests", force: :cascade do |t|
+  create_table "evidences_victims_joins", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -103,11 +87,6 @@ ActiveRecord::Schema.define(version: 20151220113143) do
     t.datetime "updated_at",               null: false
   end
 
-  create_table "permission_users", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "permissions", force: :cascade do |t|
     t.string   "add",        limit: 255
     t.string   "delete",     limit: 255
@@ -115,6 +94,11 @@ ActiveRecord::Schema.define(version: 20151220113143) do
     t.string   "view",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "permissions_users_joins", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "pfsa_cases", force: :cascade do |t|
@@ -148,11 +132,6 @@ ActiveRecord::Schema.define(version: 20151220113143) do
 
   add_index "providers", ["provider_cnic"], name: "index_providers_on_provider_cnic", unique: true, using: :btree
 
-  create_table "report_users", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "reports", force: :cascade do |t|
     t.string   "report_link",   limit: 255
     t.string   "report_status", limit: 255
@@ -160,7 +139,7 @@ ActiveRecord::Schema.define(version: 20151220113143) do
     t.datetime "updated_at",                null: false
   end
 
-  create_table "role_users", force: :cascade do |t|
+  create_table "reports_users_joins", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -175,6 +154,11 @@ ActiveRecord::Schema.define(version: 20151220113143) do
     t.string   "icc_user",    limit: 50
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "roles_users_joins", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sub_evidences", force: :cascade do |t|
