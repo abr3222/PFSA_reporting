@@ -1,7 +1,7 @@
 class CreateMediaAssets < ActiveRecord::Migration
   def change
     create_table :media_assets do |t|
-    t.string"Jolly"
+    t.string"Iamjolly"
 
       t.timestamps null: false
     end
