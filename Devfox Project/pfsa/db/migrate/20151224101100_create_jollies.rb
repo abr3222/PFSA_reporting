@@ -5,6 +5,9 @@ class CreateJollies < ActiveRecord::Migration
 
       t.string" Abr jolly Pc"
 
+      t.string"Barye bahya and abr :P :P"
+      t.string"Jolly lolly"
+      t.string"abr kyun dekh raha hai"
       t.string"Barye bahya and jolly :P :P"
       t.string"Jolly ABR"
 
