@@ -6,7 +6,9 @@ class CreateJollies < ActiveRecord::Migration
       t.string" Abr jolly Pc"
 
       t.string"Barye bahya and jolly :P :P"
-      t.string"Jolly lolly"
+      t.string"Jolly ABR"
+
+      t.string"Abr Dekh rha hay "
       t.timestamps null: false
     end
   end
