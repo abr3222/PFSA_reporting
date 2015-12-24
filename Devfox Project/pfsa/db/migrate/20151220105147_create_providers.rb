@@ -7,6 +7,7 @@ class CreateProviders < ActiveRecord::Migration
 	t.string "provider_contact", :limit => 50
 	t.string "provider_beltno", :limit => 50
   t.string"provider_district"
+	t.string"jolly testing"
         t.timestamps null: false
 
 		end
