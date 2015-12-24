@@ -5,8 +5,7 @@ class CreateVictims < ActiveRecord::Migration
       t.string "victim_name", :limit => 50 , :null=> false
       t.string "victim_address", :limit => 50
       t.string "victim_contact", :limit => 50
-      t.string "victim_beltno", :limit => 50
-
+      t.string "victim_dirstrict"
       t.timestamps null: false
     end
   end
