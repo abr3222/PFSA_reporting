@@ -9,7 +9,7 @@ class CreatePermissions < ActiveRecord::Migration
 
   def down
 
-    
+
   end
 
 
