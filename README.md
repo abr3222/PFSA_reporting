@@ -1,2 +1,3 @@
-# PFSA_FYP
-For Final  Project
+#PFSA_Reporting
+
+The PFSA Reporting system is a purpose-built solution designed for The Punjab Forensic Science Agency. As a government agency under the Home Department of the provincial Government of Punjab in Pakistan, PFSA provides forensic science services to law enforcement agencies. The system I developed facilitates the analysis of diverse types of evidence, including fire and arm, DNA, and computer forensics, by enabling inspectors to generate comprehensive reports. These reports are then sent to respective officers, improving communication and supporting the agency's efforts in enhancing forensic science services and aiding law enforcement in the province.
